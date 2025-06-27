@@ -4,7 +4,7 @@
 
 ## 🚀 Démo en ligne
 
-[👉 Voir la démo sur GitHub Pages](https://ton-pseudo.github.io/nom-du-repo)
+[👉 Voir la démo sur GitHub Pages](https://byesslb.github.io/projet-html5-css3-js_HOMEsweetHOME/)
 
 ---
 
