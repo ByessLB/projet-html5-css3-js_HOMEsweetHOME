@@ -4,7 +4,7 @@ import { displayBiens } from './modules/biens.js'
 import { createCarrousel, setupAutoPlay } from './modules/carrousel.js'
 import { initializeModalWithBiens } from './modules/modal.js'
 import { linksMenu } from './modules/links.js'
-import { baseURL } from './modules/config.js'
+import { baseURL, basePath } from './modules/config.js'
 
 let allBiens = []
 
@@ -52,8 +52,8 @@ function initializeCarrouselAvis() {
 
 async function main() {
     await Promise.all([
-        loadHTMLContent(`${baseURL}pages/header.html`, 'header'),
-        loadHTMLContent(`${baseURL}pages/footer.html`, 'footer'),
+        loadHTMLContent(`${basePath}pages/header.html`, 'header'),
+        loadHTMLContent(`${basePath}pages/footer.html`, 'footer'),
         loadAllBiens(),
     ])
 

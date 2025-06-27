@@ -1,5 +1,5 @@
 // biens.js
-import { shuffleArray } from './utils.js';
+import { shuffleArray, getImageURL, fixImagePaths } from './utils.js';
 
 let allBiens = [];
 
@@ -13,7 +13,7 @@ export function getShuffledBiens(count = 6) {
 }
 
 export function createBienElement(bien, isDetailed = false) {
-    const image = `../assets/Image/biens/${bien.image}`;
+    const image = getImageURL(bien.image);
     const div = document.createElement('div');
     div.className = 'bien__item';
     div.id = `${bien.id}`;
@@ -44,4 +44,6 @@ export function displayBiens(biens, containerId, isDetailed = false) {
         const element = createBienElement(bien, isDetailed);
         container.appendChild(element);
     });
+
+    fixImagePaths(container);
 }

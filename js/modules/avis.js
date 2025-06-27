@@ -1,5 +1,5 @@
 // avis.js
-import { createCarrousel, setupAutoPlay } from './carousel.js';
+import { createCarrousel, setupAutoPlay } from './carrousel.js';
 
 export function initializeAvisCarrousel() {
     const track = document.getElementById("carrousel-avis-track");

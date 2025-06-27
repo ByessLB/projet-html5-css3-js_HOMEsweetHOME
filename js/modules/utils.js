@@ -1,18 +1,33 @@
 // utils.js
+
+/**
+ * Charge du contenu HTML depuis un fichier externe et l'injecte dans un élément du DOM
+ * @param {string} url - Chemin vers le fichier HTML
+ * @param {string} targetElementId - ID de l'élément cible dans le DOM
+ */
 export async function loadHTMLContent(url, targetElementId) {
     try {
         const response = await fetch(url);
         if (!response.ok) throw new Error(`Erreur HTTP: ${response.status}`);
         const content = await response.text();
         const targetElement = document.getElementById(targetElementId);
-        if (targetElement) targetElement.innerHTML = content;
-        else console.warn(`Élément avec l'ID '${targetElementId}' non trouvé.`);
+
+        if (targetElement) {
+            targetElement.innerHTML = content;
+            fixImagePaths(targetElement); // Corrige les chemins d'image dans le contenu injecté
+        } else {
+            console.warn(`Élément avec l'ID '${targetElementId}' non trouvé.`);
+        }
     } catch (error) {
         console.error(`Erreur lors du chargement de ${url}:`, error);
     }
 }
 
-// Charger un fichier JSON
+/**
+ * Charge un fichier JSON
+ * @param {string} url - Chemin vers le fichier JSON
+ * @returns {Promise<object|null>} Données JSON ou null en cas d’erreur
+ */
 export async function loadJSONData(url) {
     try {
         const response = await fetch(url);
@@ -24,7 +39,11 @@ export async function loadJSONData(url) {
     }
 }
 
-// Mélanger un tableau (Fisher-Yates)
+/**
+ * Mélange un tableau selon l'algorithme de Fisher-Yates
+ * @param {Array} array - Tableau à mélanger
+ * @returns {Array} Nouveau tableau mélangé
+ */
 export function shuffleArray(array) {
     const shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -32,4 +51,31 @@ export function shuffleArray(array) {
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
     return shuffled;
-} 
+}
+
+/**
+ * Corrige les chemins des images dans un conteneur après injection HTML
+ * @param {HTMLElement} container - Élément contenant les balises <img>
+ */
+export function fixImagePaths(container) {
+    const images = container.querySelectorAll('img');
+
+    images.forEach(img => {
+        let src = img.getAttribute('src');
+
+        if (src && !src.startsWith('http') && !src.startsWith('./') && !src.startsWith('../')) {
+            // Si le chemin ne commence pas par ./ ou ../, on ajoute ./ automatiquement
+            img.setAttribute('src', `./${src}`);
+        }
+    });
+}
+
+/**
+ * Génère un chemin correct vers une image en fonction de la page actuelle
+ * @param {string} relativePath - Chemin relatif de l’image (ex: 'appart.jpg')
+ * @returns {string} Chemin complet utilisable
+ */
+export function getImageURL(relativePath) {
+    const basePath = window.location.pathname.includes('/pages/') ? '../' : './';
+    return `${basePath}assets/Image/biens/${relativePath}`;
+}
