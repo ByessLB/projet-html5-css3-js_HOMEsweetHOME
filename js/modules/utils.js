@@ -14,7 +14,7 @@ export async function loadHTMLContent(url, targetElementId) {
 
         if (targetElement) {
             targetElement.innerHTML = content;
-            fixIconPaths(targetElement); // Corrige les chemins d'icon dans le contenu injecté
+            fixImagePaths(targetElement); // Corrige les chemins d'icon dans le contenu injecté
             loadLazyImages(targetElement); // Active les images lazys
         } else {
             console.warn(`Élément avec l'ID '${targetElementId}' non trouvé.`);
@@ -54,7 +54,7 @@ export function shuffleArray(array) {
     return shuffled;
 }
 
-export function fixIconPaths(container) {
+export function fixImagePaths(container) {
     const icons = container.querySelectorAll('img[data-src]');
 
     icons.forEach (icon => {
