@@ -40,11 +40,13 @@ header {
     cursor: pointer;
 }
 .menu {
-    display: block;
+    display: flex;
     justify-content: center;
 }
 .menu__list {
     display: flex;
+    flex-grow:1;
+    margin-right: 1rem;
     gap: 1rem;
     list-style: none;
 }
@@ -127,6 +129,19 @@ header {
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 4px;
+}
+.form__list input[type='number'] {
+    padding: 1rem;
+    margin: 0 2rem;
+    border: 1px solid #c4c2c2;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+.form__list input[type='range'] {
+    margin: 0 2rem;
 }
 .box__form__item__btn {
     display: flex;
