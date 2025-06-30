@@ -14,8 +14,8 @@ export async function loadHTMLContent(url, targetElementId) {
 
         if (targetElement) {
             targetElement.innerHTML = content;
-            getImageURL(targetElement);
             fixImagePaths(targetElement); // Corrige les chemins d'image dans le contenu injecté
+            fixIconPaths(targetElement); // Corrige les chemins d'icon dans le contenu injecté
             loadLazyImages(targetElement); // Active les images lazys
         } else {
             console.warn(`Élément avec l'ID '${targetElementId}' non trouvé.`);
@@ -55,15 +55,31 @@ export function shuffleArray(array) {
     return shuffled;
 }
 
+/**
+ * Corrige les chemins des images dans un conteneur après injection HTML
+ * @param {HTMLElement} container - Élément contenant les balises <img>
+ */
 export function fixImagePaths(container) {
+    const images = container.querySelectorAll('img');
+
+    images.forEach(img => {
+        let src = img.getAttribute('src');
+
+        if (src && !src.startsWith('http') && !src.startsWith('./') && !src.startsWith('../')) {
+            // Si le chemin ne commence pas par ./ ou ../, on ajoute ./ automatiquement
+            img.setAttribute('src', `./${src}`);
+        }
+    });
+}
+
+export function fixIconPaths(container) {
     const icons = container.querySelectorAll('img[data-src]');
 
     icons.forEach (icon => {
         let src = icon.getAttribute('data-src');
-        const basePath = window.location.pathname.includes('pages') ? '../' : './';
 
         if (src && !src.startsWith('http') && !src.startsWith('./') && !src.startsWith('../')) {
-            icon.setAttribute('data-src', `${basePath}${src}`);
+            icon.setAttribute('data-src', `./${src}`);
         }
     })
 }
