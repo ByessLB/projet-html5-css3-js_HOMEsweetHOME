@@ -21,7 +21,7 @@ export function createBienElement(bien, isDetailed = false) {
     if (isDetailed) {
         div.innerHTML = `
             <h4>${bien.type} ${bien.localisation} (${bien.code_postal})</h4>
-            <img src="${image}" alt="${bien.localisation}" class="bien__item__img">
+            <img data-src="${image}" alt="${bien.localisation}" class="bien__item__img">
             <p>${bien.type} de ${bien.surface}m²<br>
             ${bien.nbr_pieces} pièces - ${bien.nbr_chambre} chambre(s)<br>
             ${bien.rue}</p>
@@ -29,7 +29,7 @@ export function createBienElement(bien, isDetailed = false) {
     } else {
         div.innerHTML = `
             <h4 class="bien__item__title">${bien.type} ${bien.localisation} (${bien.code_postal})</h4>
-            <img src="${image}" alt="${bien.localisation}" class="bien__item__img">
+            <img data-src="${image}" alt="${bien.localisation}" class="bien__item__img">
         `;
     }
 
