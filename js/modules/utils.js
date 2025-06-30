@@ -14,6 +14,7 @@ export async function loadHTMLContent(url, targetElementId) {
 
         if (targetElement) {
             targetElement.innerHTML = content;
+            getImageURL(targetElement);
             fixImagePaths(targetElement); // Corrige les chemins d'image dans le contenu injecté
             loadLazyImages(targetElement); // Active les images lazys
         } else {
@@ -59,9 +60,11 @@ export function fixImagePaths(container) {
 
     icons.forEach (icon => {
         let src = icon.getAttribute('data-src');
+        const basePath = window.location.pathname.includes('/pages/') ? '../' : './';
+
 
         if (src && !src.startsWith('http') && !src.startsWith('./') && !src.startsWith('../')) {
-            icon.setAttribute('data-src', `./${src}`);
+            icon.setAttribute('data-src', `${basePath}${src}`);
         }
     })
 }
