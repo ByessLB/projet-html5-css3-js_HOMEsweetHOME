@@ -3,13 +3,229 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>A propos</title>
+        <title>HOMEsweetHOME</title>
         <link rel="stylesheet" href="../css/normalize.css" />
         <link rel="stylesheet" href="../css/styles.css" />
     </head>
     <body>
         <div id="header"></div>
-        <h1>A propos</h1>
+
+        <section class="section__form">
+            <div class="form">
+                <div class="type__bien">
+                    <img
+                        src="../assets/Icon/house-sun-svgrepo-com.svg"
+                        alt=""
+                        class="icon"
+                    />
+                    <img
+                        src="../assets/Icon/key-svgrepo-com.svg"
+                        alt=""
+                        class="icon"
+                    />
+                </div>
+                <form action="" method="get" class="form__list">
+                    <div class="label__localisation">
+                        <img
+                            src="../assets/Icon/location-pin-alt-1-svgrepo-com.svg"
+                            alt=""
+                            class="icon"
+                        />
+                        <input
+                            type="text"
+                            id="Localisations"
+                            name="Localisations"
+                            placeholder="Saisir le lieu ou le code postal"
+                            autocomplete="off"
+                            value
+                        />
+                    </div>
+                    <br />
+                    <label for="nbr__pieces"> Nombres de pièces : </label>
+                    <input
+                        type="number"
+                        name="nbr__pieces"
+                        id="nbr__pieces"
+                        min="1"
+                        max="30"
+                        value="3"
+                    />
+                    <br />
+                    <label for="nbr__chambres"> Nombres de chambres : </label>
+                    <input
+                        type="number"
+                        name="nbr__chambres"
+                        id="nbr__chambres"
+                        min="1"
+                        max="10"
+                        value="2"
+                    />
+                    <br />
+                    <label for="prix__max"> Valeur du bien : </label>
+                    <input
+                        type="range"
+                        name="prix__max"
+                        id="prix__max"
+                        min="0"
+                        max="3000"
+                        value="800"
+                        step="50"
+                    />
+                    <br />
+                </form>
+                <div class="box__form__item__btn">
+                    <span class="form__item__span"></span>
+                    <button type="submit" class="form__item__btn">
+                        Validez
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <article class="article">
+            <h3>Comment ça marche ? La locations en 4 étapes !</h3>
+            <ul class="article__list">
+                <li class="article__item">
+                    <p class="article__item__text">
+                        <strong>Trouver un bien :</strong>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Ut quis nunc lorem. Suspendisse est quam, maximus non
+                        interdum vel, malesuada euismod sapien. Aenean vitae
+                        condimentum nisl, eu ullamcorper ex.
+                    </p>
+                </li>
+                <li class="article__item">
+                    <p class="article__item__text">
+                        <strong>Constituer son dossier :</strong>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Ut quis nunc lorem. Suspendisse est quam, maximus non
+                        interdum vel, malesuada euismod sapien. Aenean vitae
+                        condimentum nisl, eu ullamcorper ex.
+                    </p>
+                </li>
+                <li class="article__item">
+                    <p class="article__item__text">
+                        <strong>Signer son contrat :</strong>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Ut quis nunc lorem. Suspendisse est quam, maximus non
+                        interdum vel, malesuada euismod sapien. Aenean vitae
+                        condimentum nisl, eu ullamcorper ex.
+                    </p>
+                </li>
+                <li class="article__item">
+                    <p class="article__item__text">
+                        <strong>Entrer dans les lieux :</strong>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Ut quis nunc lorem. Suspendisse est quam, maximus non
+                        interdum vel, malesuada euismod sapien. Aenean vitae
+                        condimentum nisl, eu ullamcorper ex.
+                    </p>
+                </li>
+            </ul>
+        </article>
+
+        <section class="section__bien">
+            <h3>Nos services - les biens à la location</h3>
+            <div class="all__bien__item" id="biens-container"></div>
+        </section>
+
+        <section class="section__a__propos">
+            <img
+                src="../assets/Icon/compass-svgrepo-com.svg"
+                alt="a__propos__icon"
+                class="icon"
+            />
+            <h3 class="a__propos__title">Qui sommes nous ? Notre histoire</h3>
+            <p class="a__propos__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+                unde cumque saepe. Officia beatae nam voluptatem nobis omnis et?
+                Beatae laboriosam harum, sequi sunt aut dolorum officiis
+                repellendus nulla est?
+            </p>
+        </section>
+
+        <section class="section__avis">
+            <h3 class="avis__title">
+                Votre avis compte - Ils nous ont fait confiance
+            </h3>
+            <div class="box__carrousel">
+                <div class="carrousel">
+                    <button class="carrousel__btn carrousel__btn--prev">
+                        &#10094;
+                    </button>
+
+                    <div class="carrousel__track" id="carrousel-avis-track">
+                        <div class="avis__bloc">
+                            <div class="avis__card">
+                                <img
+                                    src="../assets/Image/users/ai-generated-8223056_1920.png"
+                                    alt=""
+                                    class="avis__bloc__img"
+                                />
+                                <ul class="avis__bloc__list">
+                                    <li class="avis__bloc__item"></li>
+                                    <li class="avis__bloc__item"></li>
+                                    <li class="avis__bloc__item"></li>
+                                    <li class="avis__bloc__item"></li>
+                                    <li class="avis__bloc__item"></li>
+                                </ul>
+                                <h4 class="avis__bloc__title">Jessy TR.</h4>
+                                <p class="avis__bloc__text">
+                                    Super service, rapide et efficace !
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="avis__bloc">
+                            <div class="avis__card">
+                                <img
+                                    src="../assets/Image/users/homme_selfie_ia_generation.png"
+                                    alt=""
+                                    class="avis__bloc__img"
+                                />
+                                <ul class="avis__bloc__list">
+                                    <li class="avis__bloc__item"></li>
+                                    <li class="avis__bloc__item"></li>
+                                    <li class="avis__bloc__item"></li>
+                                    <li class="avis__bloc__item"></li>
+                                    <li class="avis__bloc__item"></li>
+                                </ul>
+                                <h4 class="avis__bloc__title">Marc H.</h4>
+                                <p class="avis__bloc__text">
+                                    Location trouvée en 3 jours, merci !
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="avis__bloc">
+                            <div class="avis__card">
+                                <img
+                                    src="../assets/Image/users/woman-7533393_1920.jpg"
+                                    alt=""
+                                    class="avis__bloc__img"
+                                />
+                                <ul class="avis__bloc__list">
+                                    <li class="avis__bloc__item"></li>
+                                    <li class="avis__bloc__item"></li>
+                                    <li class="avis__bloc__item"></li>
+                                    <li class="avis__bloc__item"></li>
+                                    <li class="avis__bloc__item"></li>
+                                </ul>
+                                <h4 class="avis__bloc__title">Élodie C.</h4>
+                                <p class="avis__bloc__text">
+                                    Interface simple et intuitive !
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="carrousel__btn carrousel__btn--next">
+                        &#10095;
+                    </button>
+                </div>
+            </div>
+        </section>
+
         <div id="footer"></div>
     </body>
     <script type="module" src="../js/main.js"></script>

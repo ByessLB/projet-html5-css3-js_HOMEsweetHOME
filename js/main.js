@@ -5,6 +5,7 @@ import { createCarrousel, setupAutoPlay } from './modules/carrousel.js'
 import { initializeModalWithBiens } from './modules/modal.js'
 import { linksMenu } from './modules/links.js'
 import { baseURL } from './modules/config.js'
+import { displayCollapse } from './modules/accordion.js'
 
 let allBiens = []
 
@@ -61,6 +62,7 @@ async function main() {
     initializeCarrouselAvis()
     displayRandomBiens()
     displayAllBiens()
+    displayCollapse()
     initializeModalWithBiens(allBiens, baseURL);
 }
 

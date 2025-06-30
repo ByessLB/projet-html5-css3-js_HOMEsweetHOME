@@ -165,11 +165,17 @@ header {
     -moz-border-radius: 0 0 8px 8px;
     -ms-border-radius: 0 0 8px 8px;
     -o-border-radius: 0 0 8px 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+    -moz-transition: background-color 0.3s ease, color 0.3s ease;
+    -ms-transition: background-color 0.3s ease, color 0.3s ease;
+    -o-transition: background-color 0.3s ease, color 0.3s ease;
 }
 .form__item__btn:hover {
     background-color: #b756c4;
     font-weight: bold;
     color: #fafafa;
+
 }
 
 /* Article */
@@ -570,4 +576,40 @@ footer {
     .menu__burger {
         display: block;
     }
+}
+
+@media (min-width: 768px) {
+        .service-container {
+            margin: 0 10rem;
+        }
+
+}
+
+
+
+/* !-----SERVICES-----! */
+.services {
+    margin: 2rem;
+}
+.service-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+}
+
+.collapse .content {
+    display: none;
+}
+
+.open .content {
+    display: flex;
+    border: 1px solid #bbbbbb5e;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    box-shadow: 3px 5px 10px #bbbbbb;
+    margin: 0.5rem 0 1rem 1rem;
+    padding: 0 0.5rem 0 0.5rem;
 }

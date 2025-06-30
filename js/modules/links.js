@@ -11,6 +11,7 @@ export function linksMenu(basePath = '') {
 
         // Création d’un lien absolu pour comparaison fiable
         const absoluteHref = new URL(href, window.location.href);
+        console.log(absoluteHref);
         const linkPath = absoluteHref.pathname;
 
         // Mets à jour le href dans le DOM avec basePath si nécessaire
@@ -33,5 +34,8 @@ export function linksMenu(basePath = '') {
         } else {
             link.parentElement.classList.remove('--active');
         }
+
+        console.log(normalizedCurrent)
+        console.log(normalizedLink)
     });
 }
