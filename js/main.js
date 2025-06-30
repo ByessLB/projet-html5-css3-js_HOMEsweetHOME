@@ -4,12 +4,11 @@ import { displayBiens } from './modules/biens.js'
 import { createCarrousel, setupAutoPlay } from './modules/carrousel.js'
 import { initializeModalWithBiens } from './modules/modal.js'
 import { linksMenu } from './modules/links.js'
-import { baseURL, basePath } from './modules/config.js'
+import { baseURL } from './modules/config.js'
 
 let allBiens = []
 
-// const currentPage = window.location.pathname.split('/').pop();
-// const basePath = currentPage === '' || currentPage === 'index.html' ? './' : '../';
+
 
 async function loadAllBiens() {
     const biensData = await loadJSONData(`${baseURL}data/properties.json`)
@@ -52,8 +51,8 @@ function initializeCarrouselAvis() {
 
 async function main() {
     await Promise.all([
-        loadHTMLContent(`${basePath}pages/header.html`, 'header'),
-        loadHTMLContent(`${basePath}pages/footer.html`, 'footer'),
+        loadHTMLContent(`${baseURL}pages/header.html`, 'header'),
+        loadHTMLContent(`${baseURL}pages/footer.html`, 'footer'),
         loadAllBiens(),
     ])
 

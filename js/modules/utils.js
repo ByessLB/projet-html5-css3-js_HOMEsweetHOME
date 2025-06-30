@@ -1,4 +1,5 @@
 // utils.js
+import { baseURL } from "./config.js";
 
 /**
  * Charge du contenu HTML depuis un fichier externe et l'injecte dans un élément du DOM
@@ -78,8 +79,8 @@ export function fixIconPaths(container) {
     icons.forEach (icon => {
         let src = icon.getAttribute('data-src');
 
+        icon.setAttribute('data-src', `${baseURL}${src}`);
         if (src && !src.startsWith('http') && !src.startsWith('./') && !src.startsWith('../')) {
-            icon.setAttribute('data-src', `./${src}`);
         }
     })
 }
@@ -99,6 +100,5 @@ export function loadLazyImages(container) {
  * @returns {string} Chemin complet utilisable
  */
 export function getImageURL(relativePath) {
-    const basePath = window.location.pathname.includes('/pages/') ? '../' : './';
-    return `${basePath}assets/Image/biens/${relativePath}`;
+    return `${baseURL}assets/Image/biens/${relativePath}`;
 }
