@@ -14,7 +14,6 @@ export async function loadHTMLContent(url, targetElementId) {
 
         if (targetElement) {
             targetElement.innerHTML = content;
-            fixImagePaths(targetElement); // Corrige les chemins d'image dans le contenu injecté
             fixIconPaths(targetElement); // Corrige les chemins d'icon dans le contenu injecté
             loadLazyImages(targetElement); // Active les images lazys
         } else {
@@ -53,23 +52,6 @@ export function shuffleArray(array) {
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
     return shuffled;
-}
-
-/**
- * Corrige les chemins des images dans un conteneur après injection HTML
- * @param {HTMLElement} container - Élément contenant les balises <img>
- */
-export function fixImagePaths(container) {
-    const images = container.querySelectorAll('img');
-
-    images.forEach(img => {
-        let src = img.getAttribute('src');
-
-        if (src && !src.startsWith('http') && !src.startsWith('./') && !src.startsWith('../')) {
-            // Si le chemin ne commence pas par ./ ou ../, on ajoute ./ automatiquement
-            img.setAttribute('src', `./${src}`);
-        }
-    });
 }
 
 export function fixIconPaths(container) {

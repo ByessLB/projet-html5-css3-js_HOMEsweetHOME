@@ -40,7 +40,7 @@ header {
     cursor: pointer;
 }
 .menu {
-    display: flex;
+    display: block;
 }
 .menu__list {
     display: flex;
@@ -139,6 +139,7 @@ header {
 .form__item__btn {
     padding: 2.2rem;
     width: 100%;
+    font-weight: bold;
     color: #333;
     background-color: rgba(255, 255, 255, 0.76);
     border: none;
@@ -150,7 +151,9 @@ header {
     -o-border-radius: 0 0 8px 8px;
 }
 .form__item__btn:hover {
-    background-color: #df28f7;
+    background-color: #b756c4;
+    font-weight: bold;
+    color: #fafafa;
 }
 
 /* Article */
