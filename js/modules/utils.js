@@ -61,7 +61,6 @@ export function fixImagePaths(container) {
     icons.forEach (icon => {
         let src = icon.getAttribute('data-src');
         const basePath = window.location.pathname.includes('pages') ? '../' : './';
-        console.log(basePath + src);
 
         if (src && !src.startsWith('http') && !src.startsWith('./') && !src.startsWith('../')) {
             icon.setAttribute('data-src', `${basePath}${src}`);

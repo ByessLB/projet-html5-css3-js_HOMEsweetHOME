@@ -41,6 +41,7 @@ header {
 }
 .menu {
     display: block;
+    justify-content: center;
 }
 .menu__list {
     display: flex;
