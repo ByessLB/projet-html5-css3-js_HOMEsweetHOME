@@ -34,6 +34,9 @@ header {
     align-items: center;
     gap: 1rem;
 }
+.menu__navbar .icon {
+    cursor: pointer;
+}
 .menu__burger {
     display: none;
     cursor: pointer;
@@ -95,6 +98,7 @@ header {
     width: 2.5rem;
     padding: 1rem;
     border-bottom: 2px solid;
+    cursor: pointer;
 }
 .type__bien .icon:hover {
     padding: 0.8rem;
