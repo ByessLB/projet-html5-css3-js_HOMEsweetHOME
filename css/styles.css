@@ -5,6 +5,10 @@ body {
     background: #f4f4f4;
 }
 
+h1, h2, h3 {
+    color: #db4aee;
+}
+
 .icon {
     width: 1.8rem;
 }

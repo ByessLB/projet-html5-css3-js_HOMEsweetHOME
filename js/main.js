@@ -9,8 +9,6 @@ import { displayCollapse } from './modules/accordion.js'
 
 let allBiens = []
 
-
-
 async function loadAllBiens() {
     const biensData = await loadJSONData(`${baseURL}data/properties.json`)
     if (biensData) {
