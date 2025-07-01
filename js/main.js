@@ -2,7 +2,7 @@
 import { loadHTMLContent, loadJSONData, shuffleArray } from './modules/utils.js'
 import { displayBiens } from './modules/biens.js'
 import { createCarrousel, setupAutoPlay } from './modules/carrousel.js'
-import { initializeModalWithBiens } from './modules/modal.js'
+import { initializeModalWithBiens, modalConnexion } from './modules/modal.js'
 import { linksMenu } from './modules/links.js'
 import { baseURL } from './modules/config.js'
 import { displayCollapse } from './modules/accordion.js'
@@ -63,6 +63,7 @@ async function main() {
     displayRandomBiens()
     displayAllBiens()
     displayCollapse()
+    modalConnexion()
     initializeModalWithBiens(allBiens, baseURL);
 }
 

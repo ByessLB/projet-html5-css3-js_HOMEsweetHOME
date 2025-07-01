@@ -72,3 +72,22 @@ export function initializeModalWithBiens(allBiens, basePathParam) {
     showBienInModal(currentSlide);
   });
 }
+
+export function modalConnexion() {
+  const authForm = document.getElementById("auth-form");
+  const btnClose = document.getElementById("closeForm");
+  const iconUser = document.getElementById('icon-user');
+  console.log(authForm);
+  const liConnexion = document.getElementById('connection-modal');
+
+  iconUser.addEventListener('click', () => {
+    authForm.classList.add('active');
+  })
+
+  liConnexion.addEventListener('click', () => {
+    authForm.classList.add('active');
+  })
+
+  btnClose.addEventListener('click', () => authForm.classList.remove('active'));
+
+}

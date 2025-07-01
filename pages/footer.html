@@ -47,7 +47,25 @@
         <li class="page_item"><a href="pages/locations.html">Locations</a></li>
         <li class="page_item"><a href="pages/services.html">Services</a></li>
         <li class="page_item"><a href="pages/apropos.html">A propos</a></li>
-        <li class="page_item"><a href="">Connexion</a></li>
+        <li class="page_item" id="connection-modal">Connexion</li>
       </ul>
     </div>
+
+    <div id="auth-form" class="auth-form">
+      <button class="modal__close" id="closeForm">&times;</button>
+          <div class="modal__form">
+              <h2>Connectez-vous à votre compte</h2>
+              <form>
+                  <label for="email">Email</label>
+                  <input id="email" type="email" required />
+                  <label for="mdp">Mot de passe</label>
+                  <input id="mdp" type="password" required />
+                  <button type="submit">Connexion</button>
+                  <p>
+                      <a href="#">Pas encore inscrit ?</a> |
+                      <a href="#">Mot de passe oublié</a>
+                  </p>
+              </form>
+          </div>
+      </div>
   </footer>
