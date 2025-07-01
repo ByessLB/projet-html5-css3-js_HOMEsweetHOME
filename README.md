@@ -22,8 +22,11 @@
 ├── js/
 │   ├── main.js
 │   └── modules/
+│       ├── accordion.js
+│       ├── avis.js
 │       ├── biens.js
 │       ├── carrousel.js
+│       ├── config.js
 │       ├── links.js
 │       ├── modal.js
 │       └── utils.js
