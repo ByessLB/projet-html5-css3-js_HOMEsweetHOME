@@ -71,7 +71,10 @@ header {
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 8px;
     max-width: 400px;
-    width: 80%;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    width: 93%;
 }
 .type__bien {
     display: flex;
@@ -85,7 +88,7 @@ header {
 }
 
 .type__bien .icon {
-    width: 3rem;
+    width: 2.5rem;
     padding: 1rem;
     border-bottom: 2px solid;
 }
@@ -94,7 +97,6 @@ header {
     color: #df28f7;
 }
 .label__localisation {
-    margin: 0 2rem;
     display: inline-flex;
     height: 3rem;
     background-color: white;
@@ -132,7 +134,6 @@ header {
 }
 .form__list input[type='number'] {
     padding: 1rem;
-    margin: 0 2rem;
     border: 1px solid #c4c2c2;
     border-radius: 8px;
     -webkit-border-radius: 8px;
@@ -141,7 +142,7 @@ header {
     -o-border-radius: 8px;
 }
 .form__list input[type='range'] {
-    margin: 0 2rem;
+    margin: 0 1rem;
 }
 .box__form__item__btn {
     display: flex;
@@ -153,18 +154,19 @@ header {
     border: 1px solid #dbdbdb;
 }
 .form__item__btn {
-    padding: 2.2rem;
+    padding: 2rem;
     width: 100%;
+    box-shadow: 1px 2px 15px rgb(204, 204, 204);
     font-weight: bold;
     color: #333;
-    background-color: rgba(255, 255, 255, 0.76);
+    background-color: rgb(255, 255, 255);
     border: none;
-    border-radius: 0 0 8px 8px;
+    border-radius: 8px;
     cursor: pointer;
-    -webkit-border-radius: 0 0 8px 8px;
-    -moz-border-radius: 0 0 8px 8px;
-    -ms-border-radius: 0 0 8px 8px;
-    -o-border-radius: 0 0 8px 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
     transition: background-color 0.3s ease, color 0.3s ease;
     -webkit-transition: background-color 0.3s ease, color 0.3s ease;
     -moz-transition: background-color 0.3s ease, color 0.3s ease;
@@ -173,6 +175,7 @@ header {
 }
 .form__item__btn:hover {
     background-color: #b756c4;
+    box-shadow: 1px 2px 15px rgb(230, 157, 252);
     font-weight: bold;
     color: #fafafa;
 
@@ -184,6 +187,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 5rem;
     padding: 3rem;
 }
 .article h3 {
